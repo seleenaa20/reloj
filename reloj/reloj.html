@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+		#reloj{ 
+			background-color:yellow;
+			text-aling: center;
+			color:black;
+		}
+    </style>
+    
+	<script>
+		function f(){
+			  var fecha = new Date();
+			  var hora= fecha.getHours();
+			  var minutos= fecha.getMinutes();
+			  var segundos= fecha.getSeconds();
+			  document.getElementById('contenedor').innerHTML = hora + ":" + minutos + ":" +segundos;
+			  setInterval (f, 1000);
+		}
+    </script>
+  </head>
+  <body>
+	<h1>RELOJ</h1/>
+    <button onclick="f()">Dame la hora</button>
+	<div id="reloj">
+		<br>
+		<h1 id="contenedor"></h1>
+	</div>
+  </body>
+</html>

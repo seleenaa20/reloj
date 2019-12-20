@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Reloj</title>
+	<meta charset="UTF-8">
+    <style type="text/css">
+		#reloj{
+			background-color: pink;
+			text-align: center;
+			color: white;
+			border: 2px solid blue;
+		}
+	</style>
+
+	<script>
+		function anadirCero(i){
+			if (i < 10){
+				i="0" + i;
+			}
+			return i;
+		}
+		function f(){
+			var fecha = new Date();
+			var hora = anadirCero(fecha.getHours());
+			var minutos= anadirCero(fecha.getMinutes());
+			var segundos=anadirCero(fecha.getSeconds());
+			document.getElementById('contenedor').innerHTML= + hora + ":" + minutos + ":" + segundos;
+			setInterval (f, 1000);
+			document.getElementById("reloj").style.backgroundColor="orange";
+			document.getElementById("reloj").style.color="black";
+			document.getElementById("reloj").style.border="8px solid green";
+			document.getElementById("reloj").style.textAlign="left";
+		}
+	</script>
+  </head>
+  
+	<body>
+		<h1>RELOJ</h1/>
+		<button onclick="f()">Dame la hora</button>
+		<div id="reloj">
+			<br>
+			<h1 id="contenedor"></h1>
+		</div>
+	</body>
+</html>
